@@ -16,6 +16,12 @@ class UserPhotosViewController: UIViewController, UICollectionViewDelegate, UICo
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+  
+    var imageRef: StorageReference {
+        return Storage.storage().reference().child("images")
+    
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,12 +1,14 @@
 //
 //  AppDelegate.swift
-//  inClass11
+//  InClass09
 //
-//  Created by Maria Handschu on 4/12/19.
-//  Copyright © 2019 Maria Handschu. All rights reserved.
+//  Created by Shehab, Mohamed on 3/27/19.
+//  Copyright © 2019 UNCC. All rights reserved.
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,9 +18,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
         return true
+        
+    }
+    
+    
+    static func showLogin(){
+         let appDelegate = UIApplication.shared.delegate as! AppDelegate
+         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+         let vc = storyboard.instantiateViewController(withIdentifier: "LoginVC")
+         appDelegate.window?.rootViewController = vc
+         appDelegate.window?.makeKeyAndVisible()
     }
 
+    static func showSignUp(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SignUpVC")
+        appDelegate.window?.rootViewController = vc
+        appDelegate.window?.makeKeyAndVisible()
+    }
+    
+    static func showPhotos(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "PhotosVC")
+        appDelegate.window?.rootViewController = vc
+        appDelegate.window?.makeKeyAndVisible()
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

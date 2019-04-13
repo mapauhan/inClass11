@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
                 
                 if error == nil{
                     print("success")
-                    AppDelegate.showContacts()
+                    AppDelegate.showPhotos()
                 } else{
                     print("error")
                     let alert = UIAlertController(title: "Error", message: "Incorrect Credentials", preferredStyle: .alert)
@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
             }
         }
         
-        AppDelegate.showContacts()
+        AppDelegate.showPhotos()
     }
     
     @IBAction func createAccountClicked(_ sender: Any) {

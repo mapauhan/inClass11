@@ -20,29 +20,36 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) { (authResult, error) in
+            if error == nil {
+                print("Succes!")
+                //AppDelegate.showContacts()
+            } else {
+                print("error \(error)")
+            }
     }
+}
     
     @IBAction func createAccountClicked(_ sender: Any) {
-        if emailTextField.text == "" || passwordTextField.text == "" {
-            let alert = UIAlertController(title: "Error", message: "You must enter both fields", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+        if emailTextField.text == "" || nameTextField.text == "" || passwordTextField.text == ""  {
+            let alert = UIAlertController(title: "Error", message: "You must enter all fields", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true)
         } else {
             Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) { (authResult, error) in
                 if error == nil {
                     print("Succes!")
-                    AppDelegate.showContacts()
+                    //AppDelegate.showContacts()
                 } else {
                     print("error \(error)")
                     let alert = UIAlertController(title: "Error", message: "\((error?.localizedDescription)!)", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                     self.present(alert, animated: true)
                 }
                 }
             }
         
-        AppDelegate.showContacts()
+        AppDelegate.showPhotos()
     }
     
     @IBAction func cancelClicked(_ sender: Any) {
