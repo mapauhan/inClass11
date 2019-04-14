@@ -93,12 +93,12 @@
 				B967ECF322624A97002C2547 /* LoginViewController.swift */,
 				B967ECF222624A94002C2547 /* SignUpViewController.swift */,
 				B967ECF622625021002C2547 /* UserPhotosViewController.swift */,
+				B95729B22262879000761763 /* PhotoViewController.swift */,
 				B967ECE022613158002C2547 /* Main.storyboard */,
 				B967ECE322613160002C2547 /* Assets.xcassets */,
 				B967ECE522613160002C2547 /* LaunchScreen.storyboard */,
 				B967ECF022623A73002C2547 /* GoogleService-Info.plist */,
 				B967ECE822613160002C2547 /* Info.plist */,
-				B95729B22262879000761763 /* PhotoViewController.swift */,
 			);
 			path = inClass11;
 			sourceTree = "<group>";
